@@ -1,0 +1,87 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebBanVaLi.Models.TDanhMucSp
+
+@{
+    ViewData["Title"] = "SuaSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Sửa sản phẩm</h1>
+
+<h4>Thông tin sản phẩm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="SuaSanPham">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaSp" />
+            <div class="form-group">
+                <label class="control-label">Mã sản phẩm</label>
+                <input asp-for="MaSp" class="form-control" />
+                <span asp-validation-for="MaSp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tên sản phẩm</label>
+                <input asp-for="TenSp" class="form-control" />
+                <span asp-validation-for="TenSp" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">Mã chất liệu</label>
+                <select style="height:46px" asp-for="MaChatLieu" class="form-control" asp-items="ViewBag.MaChatLieu"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Model</label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Cân nặng (kg)</label>
+                <input asp-for="CanNang" class="form-control" />
+                <span asp-validation-for="CanNang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Độ nới (cm)</label>
+                <input asp-for="DoNoi" class="form-control" />
+                <span asp-validation-for="DoNoi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Mã hãng sản xuất</label>
+                <select style="height:46px" asp-for="MaHangSx" class="form-control" asp-items="ViewBag.MaHangSx"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Mã nước sản xuất</label>
+                <select style="height:46px" asp-for="MaNuocSx" class="form-control" asp-items="ViewBag.MaNuocSx"></select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Thời gian bảo hành (tháng)</label>
+                <input asp-for="ThoiGianBaoHanh" class="form-control" />
+                <span asp-validation-for="ThoiGianBaoHanh" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Mã loại</label>
+                <select style="height:46px" asp-for="MaDt" class="form-control" asp-items="ViewBag.MaDt"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Ảnh</label>
+                <input type="file" asp-for="AnhDaiDien" class="form-control" />
+                <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Giá (VNĐ)</label>
+                <input asp-for="GiaLonNhat" class="form-control" />
+                <span asp-validation-for="GiaLonNhat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
